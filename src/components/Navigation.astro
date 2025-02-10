@@ -1,0 +1,214 @@
+---
+
+---
+
+<button id="menuToggle" class="mobile-button">Menu</button>
+<nav id="mobileMenu" class="mobile-menu" role="navigation">
+  <ul class="nav-list">
+    <li class="nav-list-item">
+      <a id="nav-home-URL"
+        class="nav-list-link"
+        href="/"
+        aria-label="Link to Homepage & Portfolio">Work</a>
+    </li>
+    <li class="nav-list-item">
+      <a id="nav-blog-url" class="nav-list-link" href="/about" aria-label="Link to Blog">About Jackie</a>
+    </li>
+    <!-- <li class="nav-list-item">
+      <a id="nav-blog-url" class="nav-list-link" href="/my-experiences" aria-label="Link to Blog">My Experiences</a>
+    </li> -->
+    <!-- <li class="nav-list-item">
+      <a id="nav-blog-url" class="nav-list-link" href="/ui-experiments" aria-label="Link to Blog">UI Experiments</a>
+    </li>
+   -->
+    <li class="nav-list-item">
+      <a id="nav-contact-url" class="nav-list-link" href="#contact"
+        >Open for Opportunities</a>
+    </li>
+  </ul>
+</nav>
+
+<script is:inline>
+  var menuToggle = document.getElementById("menuToggle");
+  if (menuToggle) {
+    menuToggle.onclick = function () {
+      var nav = document.getElementById("mobileMenu");
+      var button = document.getElementById("menuToggle");
+      var logo = document.getElementById("logo");
+      if (nav && !nav.classList.contains("mobile-nav-active")) {
+        nav.classList.add("mobile-nav-active");
+        if (button) {
+          button.classList.add("mobile-button-active");
+          button.textContent = "X";
+        }
+      } else {
+          if (nav) {
+            nav.classList.remove("mobile-nav-active");
+          }
+          if (button) {
+            button.classList.remove("mobile-button-active");
+            button.textContent = "Menu";
+          }
+          if (logo) {
+            logo.classList.remove("logo-colour-alt");
+          }
+
+      }
+    };
+  }
+
+</script>
+
+<style lang="scss">
+  .mobile-button {
+    background-color: transparent;
+    border: none;
+    margin-left: auto;
+    z-index: 10;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    color: var(--primaryTextColour);
+
+    &:visited {
+      color: var(--primaryTextColour);
+    }
+  }
+
+  .mobile-button-active {
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    z-index: 15;
+  }
+  .mobile-nav-active {
+    display: block;
+    background-color: teal;
+    color: white;
+    left: 0;
+    top: 0;
+    position: fixed; /* Stay in place */
+    z-index: 10;
+  }
+  nav {
+    display: none; /* Hidden by default */
+    z-index: 1; /* Sit on top */
+    background-color: transparent;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    max-height: 100%;
+  }
+  .nav-list {
+    list-style-type: none;
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+
+ 
+  }
+
+  .nav-list-item {
+    padding: 0.5rem;
+  }
+
+  .nav-list-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: white;
+
+    &:visited {
+      color: white;
+    }
+  }
+
+  #nav-contact-url{
+    display:none;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .mobile-button {
+      display: none;
+    }
+
+    nav {
+      margin-left: auto;
+      position: initial;
+      width: initial;
+      margin-left: auto;
+      display: block;
+    }
+    .nav-list {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-list-item {
+      color: var(--primaryTextColour);
+      background-color: transparent;
+      
+      &:first-child {
+      padding-left:0;
+    }
+      &:last-child {
+        color: white;
+        padding-right: 0;
+        border-radius: 2rem;
+        .nav-list-link {
+          background-image: linear-gradient(
+            to right,
+            #02aab0 0%,
+            #00cdac 51%,
+            #02aab0 100%
+          );
+          margin-top: 1.5rem;
+          padding: 0.5rem 1rem;
+          text-align: center;
+          text-transform: capitalize;
+          transition: 0.5s;
+          background-size: 200% auto;
+          color: white;
+          border-radius: 1rem;
+          text-decoration: none;
+          &:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .nav-list-link {
+      text-decoration: none;
+      text-transform: capitalize;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      background-color: transparent;
+      transition: all 0.25s ease-in;
+
+      color: var(--primaryTextColour);
+      &:visited {
+        color: var(--primaryTextColour);
+      }
+      &:hover {
+        color: #02aab0;
+        transition: all 0.25s ease-in;
+      }
+    }
+
+  #nav-contact-url{
+    display:initial;
+  }
+  }
+</style>
