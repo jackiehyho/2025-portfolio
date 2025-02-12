@@ -1,0 +1,43 @@
+---
+const { footerText, copyrightText } = Astro.props;
+
+import SocialMedia from "./SocialMedia.astro"
+import ContactForm from "./ContactForm.astro"
+
+---
+
+<footer class="container-footer">
+
+    
+<ContactForm />
+<SocialMedia />
+
+<p id="footer-copyright"><small>
+    {footerText}<br />
+    <!-- Follow <a href="https://jackiehyho.notion.site/Portfolio-Website-78a0cd74dea54b8db0e42f8444e030a2?pvs=4">my progress</a> on Notion!<br />-->
+     {copyrightText} &copy; <span id="currentYear" /></small> 
+</p>
+</footer>
+<style>
+	footer {
+        border-top: 0.25px solid #eee;
+        color:var(--primaryTextColor);
+        padding: 2rem;
+        text-align: center;
+        
+    }
+    .footer-social{
+            padding: 0;
+    }
+</style>
+<script is:inline>
+let yearDisplay = document.getElementById('currentYear');
+
+let currentYear = new Date().getFullYear();
+if (yearDisplay) {
+    yearDisplay.textContent = currentYear.toString();
+}
+
+
+</script>
+
