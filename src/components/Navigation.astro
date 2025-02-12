@@ -47,7 +47,7 @@
           }
           if (button) {
             button.classList.remove("mobile-button-active");
-            button.textContent = "Menu";
+            button.innerHTML = "Menu";
           }
           if (logo) {
             logo.classList.remove("logo-colour-alt");
@@ -77,9 +77,9 @@
   .mobile-button-active {
     color: white;
     position: fixed;
-    top: 0;
-    right: 0;
-    padding: 2rem;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
     z-index: 15;
   }
   .mobile-nav-active {
