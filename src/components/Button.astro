@@ -1,0 +1,42 @@
+---
+interface Props {
+    buttonCTA: string; 
+	buttonLink: string;
+    className: string;
+}
+const {  } = Astro.props;
+
+const {  buttonCTA, buttonLink, className, ...rest } = Astro.props;
+---
+
+<a class:list={['button', className]}{...rest} href={buttonLink}>{buttonCTA}</a>
+
+<style>
+    .button {
+        margin-top: 1.5rem;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        border-radius: 1rem;
+        text-decoration:none;
+        font-size:0.75rem;
+    }
+
+    button:disabled,
+    button[disabled]{
+    background-color:red;
+    }
+    .button:hover {
+        background-position: right center; /* change the direction of the change here */
+        text-decoration: none;    }
+
+
+    @media only screen and (min-width: 768px) {
+    .button{
+        font-size: 1rem;
+    }
+
+}
+</style>
