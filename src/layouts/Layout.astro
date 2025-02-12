@@ -2,7 +2,7 @@
 import Normalize from '../stylesheets/normalize.css'
 import Globalstyles from '../stylesheets/global.scss'
 import Header from '../components/Header.astro'
-
+import Footer from '../components/Footer.astro'
 interface Props {
   	title: string;
 	description: string;
@@ -16,16 +16,25 @@ const { title, description } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" href={Normalize} />
 		<link rel="stylesheet" href={Globalstyles} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<Header/>
-		<slot />
+		<slot  name="main"  />
+		<Footer 
+			name="footer"
+			footerText="Hand-coded by Jackie Ho for speed and performance"
+			copyrightText="All Rights Reserved" 
+	/>
 	</body>
 </html>
 
