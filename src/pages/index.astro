@@ -4,5 +4,306 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout   title="Digital Services Jackie Ho"
 description="A digital product designer from Vancouver, BC">
+<main slot="main">
 
+<section class="bento">
+    <a class="bento__links bento__one animate-left" href="/portfolio/venues">
+    <div class="bento__item ">
+        <div class="portfolio__text">
+    <h3 class="portfolio__title">VENU3S</h3>
+    <p class="portfolio__description">Helping local venues make extra money</p>
+</div>
+    <span class="portfolio__tag">Product Concept</span>
+
+    </div>
+</a>
+<a class="bento__links bento__two animate-right" href="/venues">
+    <div class="bento__item ">
+        <div class="portfolio__text">
+    <h3 class="portfolio__title">Nomster Digital</h3>
+    <p class="portfolio__description">Website</p>
+</div>
+    <span class="portfolio__tag">Product Concept</span>
+
+    </div>
+</a>
+<!-- <a class="bento__links bento__three animate-left" href="/venues">
+    <div class="bento__item ">
+        <div class="portfolio__text">
+    <h3 class="portfolio__title">Venues</h3>
+    <p class="portfolio__description">Mobile Application Concept</p>
+</div>
+    <span class="portfolio__tag">Product Concept</span>
+
+    </div>
+</a>
+<a class="bento__links bento__four animate-right" href="/venues">
+    <div class="bento__item ">
+        <div class="portfolio__text">
+    <h3 class="portfolio__title">Venues</h3>
+    <p class="portfolio__description">Mobile Application Concept</p>
+</div>
+    <span class="portfolio__tag">Product Concept</span>
+
+    </div>
+</a> -->
+
+    <!-- <div class="bento__item bento__five animate-left">
+        <div class="portfolio__text">
+            <h3 class="portfolio__title">Bar Perry Pet Photography</h3>
+            <p class="portfolio__description">Building a business from the ground up</p>
+        </div>
+            <span class="portfolio__tag">Service Design</span>
+            
+            </div>
+    
+    </div>
+
+    <div class="bento__item bento__seven animate-right">
+        <span class="portfolio__tag">3d Web Design</span>
+        <div class="portfolio__text">
+            <h3 class="portfolio__title">Nomster Digital</h3>
+            <p class="portfolio__description">Adding more fun to the community</p>
+        </div>
+    </div>
+    <div class="bento__item bento__five animate-right">
+        <div class="portfolio__text">
+            <h3 class="portfolio__title">Cloud Summit 2025</h3>
+            <p class="portfolio__description">Identity Design</p>
+        </div>
+            <span class="portfolio__tag">Identity Design</span>
+            
+            </div>
+    
+    </div> -->
+
+
+    <!-- <div class="bento__item bento__six animate-left">
+        <span class="portfolio__tag">Web Design</span>
+        <div class="portfolio__text">
+            <h3 class="portfolio__title">Four Season RV Rentals</h3>
+            <p class="portfolio__description">Informational Website</p>
+        </div>
+    
+    </div>
+    <div class="bento__item bento__six animate-left">
+        <span class="portfolio__tag">Marketing Design</span>
+        <div class="portfolio__text">
+            <h3 class="portfolio__title">Fraserway RV</h3>
+            <p class="portfolio__description">Campaign </p>
+        </div>
+    
+    </div>
+    <div class="bento__item bento__seven animate-right">
+        <span class="portfolio__tag">Web Design & Development</span>
+        <div class="portfolio__text">
+            <h3 class="portfolio__title">Specialty RV Products</h3>
+            <p class="portfolio__description">Online Catalogue</p>
+        </div>
+    </div> -->
+</section>
+</main>
 </Layout>
+
+
+<style>
+    .bento {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    .bento__links{
+        border-radius: 1rem;
+
+
+    }
+
+    .bento__item {
+        
+        height: 300px;
+        background-color: #ffffff;
+        padding: 1rem;
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bento__one{
+        grid-column: span 1;
+    }
+
+    .bento__two{
+        grid-column: span 1;
+    }
+
+    .bento__three{
+        grid-column: span 1;
+    }
+    .bento__four{
+        grid-column: span 1;
+    }
+    .bento__five{
+        grid-column: span 1;
+    }
+    .bento__six{
+        grid-column: span 1;
+    }
+    .bento__seven{
+        grid-column: span 1;
+    }
+    .portfolio__text {
+        color: #ffffff;
+        position:absolute;
+        bottom: 1rem;
+        left: 0;
+        width: 100%;
+        text-align:center;
+    }
+
+    .portfolio__tag {
+        color: #ffffff;
+        font-size: 0.75rem;
+        position: absolute;
+        padding: .25rem .5rem;
+        background-color:  #02aab0;
+        top: 1rem;
+        left: 1rem;
+        border-radius: 0.25rem;
+        text-transform: uppercase;
+
+    }
+
+    .portfolio__image{
+        height: 50%;
+    }
+
+    .animate-left{
+        animation: animateLeft 3s ease forwards;
+    }
+
+    .animate-right{
+        animation: animateRight 3s ease forwards;
+    }
+
+    @keyframes animateLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-25%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes animateRight {
+        from {
+            opacity: 0;
+            transform: translateX(25%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes animateBottom {
+        from {
+            opacity: 0;
+            transform: translateY(-25%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+
+    @media only screen and (min-width: 768px) {
+        .bento {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1rem;
+    }
+
+    .bento__item {
+        background-color: #000000;
+        border-radius: 1rem;
+        padding: 1rem;
+        height: 300px;
+        position:relative;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bento__one{
+        grid-column: span 2;
+    }
+
+    .bento__two{
+        grid-column: span 1;
+    }
+
+    .bento__three{
+        grid-column: span 1;
+    }
+    .bento__four{
+        grid-column: span 2;
+    }
+    .bento__five{
+        grid-column: span 1;
+    }
+    .bento__six{
+        grid-column: span 1;
+    }
+    .bento__seven{
+        grid-column: span 1;
+    }
+    .portfolio__text {
+        color: #ffffff;
+        position:absolute;
+        bottom: 1rem;
+        left: 0;
+        width: 100%;
+        text-align:center;
+    }
+
+
+    .animate-left{
+        animation: animateLeft 3s ease forwards;
+    }
+
+    .animate-right{
+        animation: animateRight 3s ease forwards;
+    }
+
+    @keyframes animateLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-25%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes animateRight {
+        from {
+            opacity: 0;
+            transform: translateX(25%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    }
+
+</style>
