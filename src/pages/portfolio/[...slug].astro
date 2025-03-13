@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Carousel from "../../components/Carousel.astro";
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+export async function getStaticPaths() {
+  const portfolioEntries = await getCollection("portfolio");
+  return portfolioEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+  <main class='main portfolio-main' slot='main'>
+    <h1 class='portfolio-title animateUp'>{entry.data.title}</h1>
+    <p class='portfolio-description animateUp'>{entry.data.description}</p>
+    <section class="animateUp">
+    <Carousel
+    header='Visual Artifacts'
+    images={entry.data.carousel.map((image) => ({
+      src: image.src.src,
+      caption: image.caption || "missing",
+    }))}
+  />
+    </section>
+<Content />
+</main>
+</Layout>
+
+
+<style>
+    .animateUp {   
+        animation: slideUp 1s ease-in-out;
+    }
+
+    .portfolio-title{
+        font-size: 4rem;
+    }
+    .portfolio-description{
+        font-size: 1.5rem;
+        font-weight: 100;
+    }
+
+    @keyframes slideUp {
+    from {
+      transform: translateY(10%);
+      opacity: 0;  
+        
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;  
+
+    }
+</style>
