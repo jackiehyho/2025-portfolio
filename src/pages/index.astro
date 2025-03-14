@@ -5,15 +5,22 @@ import Layout from '../layouts/Layout.astro';
 <Layout   title="Digital Services Jackie Ho"
 description="A digital product designer from Vancouver, BC">
 <main slot="main">
+<section class="hero">
+    <div class="hero__text-container">
+        <h1 class="hero__title">I design & implement experiences that help create loyal, happy customers</h1>
+        <p class="hero__description">A digital product designer from Vancouver, BC</p>
+    </div>
 
+
+</section>
 <section class="bento">
     <a class="bento__links bento__one animate-left" href="/portfolio/venues">
     <div class="bento__item ">
         <div class="portfolio__text">
-    <h3 class="portfolio__title">VENU3S</h3>
+    <h3 class="portfolio__title">Venu3s</h3>
     <p class="portfolio__description">Helping local venues make extra money</p>
 </div>
-    <span class="portfolio__tag">Product Concept</span>
+    <span class="portfolio__tag">Native App Concept</span>
 
     </div>
 </a>
@@ -21,32 +28,32 @@ description="A digital product designer from Vancouver, BC">
     <div class="bento__item ">
         <div class="portfolio__text">
     <h3 class="portfolio__title">Nomster Digital</h3>
-    <p class="portfolio__description">Website</p>
+    <p class="portfolio__description">Digital Agency</p>
 </div>
     <span class="portfolio__tag">Product Concept</span>
 
     </div>
 </a>
-<!-- <a class="bento__links bento__three animate-left" href="/venues">
+<a class="bento__links bento__three animate-left" href="/venues">
     <div class="bento__item ">
         <div class="portfolio__text">
-    <h3 class="portfolio__title">Venues</h3>
-    <p class="portfolio__description">Mobile Application Concept</p>
+    <h3 class="portfolio__title">Bar Perry Pet Photography</h3>
+    <p class="portfolio__description">Turning a dream into customer-centric experience.</p>
 </div>
-    <span class="portfolio__tag">Product Concept</span>
+    <span class="portfolio__tag">Service Design</span>
 
     </div>
 </a>
 <a class="bento__links bento__four animate-right" href="/venues">
     <div class="bento__item ">
         <div class="portfolio__text">
-    <h3 class="portfolio__title">Venues</h3>
-    <p class="portfolio__description">Mobile Application Concept</p>
+    <h3 class="portfolio__title">Campfyre</h3>
+    <p class="portfolio__description">Supporting RV renters on the road</p>
 </div>
-    <span class="portfolio__tag">Product Concept</span>
+    <span class="portfolio__tag">Native App Concept</span>
 
     </div>
-</a> -->
+</a>
 
     <!-- <div class="bento__item bento__five animate-left">
         <div class="portfolio__text">
@@ -107,6 +114,11 @@ description="A digital product designer from Vancouver, BC">
 
 
 <style>
+    .hero__title {
+        font-size: 4rem;
+        color: #333333;
+        text-align: center;
+    }
     .bento {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
