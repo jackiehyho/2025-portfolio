@@ -75,7 +75,7 @@ import Layout from "../layouts/Layout.astro";
     </div>
     <section id="carousel-section"class='container'>
         <div class='carousel-gallery'>
-          <button id="carousel-button-left" onclick="this.disabled=true;"class='button-left arrow'>🠄</button>
+          <button id="carousel-button-left" onclick="this.disabled=true;"class='button-left arrow'><span class="arrow-container arrow-rotate">&#10140;</span></button>
           <div class='carousel-image-list'>
   
                 <div class='carousel-image-item'>
@@ -146,7 +146,7 @@ import Layout from "../layouts/Layout.astro";
   
   
           </div>
-          <button id="carousel-button-right" onclick="this.disabled=true;" class='button-right arrow'>🠆</button>
+          <button id="carousel-button-right" onclick="this.disabled=true;" class='button-right arrow'><span class="arrow-container ">&#10140;</span></button>
         </div>
       </section>
 
@@ -317,6 +317,7 @@ import Layout from "../layouts/Layout.astro";
   .button-left {
     position: absolute;
     left: 0.5rem;
+    transform: rotate(180deg);
     top: 50%;
     z-index: 10;
   }
@@ -348,6 +349,9 @@ import Layout from "../layouts/Layout.astro";
     box-shadow: 5px 5px 5px -2px rgba(0, 0, 0, 0.5);
   }
 
+  .arrow-rotate {
+    transform: rotate(180deg);
+  }
   .sliding-transition {
     transition: all 0.5s ease-in-out;
   }

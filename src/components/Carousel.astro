@@ -10,7 +10,7 @@ const { images, header } = Astro.props;
 <section id="carousel-section"class='container'>
   <h2 class='carousel-header portfolio-subheaders'></h2>
   <div class='carousel-gallery'>
-    <button id="carousel-button-left" onclick="this.disabled=true;"class='button-left arrow'>🠄</button>
+    <button id="carousel-button-left" onclick="this.disabled=true;"class='button-left arrow'><span class="arrow-container arrow-reverse">&#10140;</span></button>
     <div class='carousel-image-list'>
       {
         images.map((image) => (
@@ -25,7 +25,7 @@ const { images, header } = Astro.props;
         ))
       }
     </div>
-    <button id="carousel-button-right" onclick="this.disabled=true;" class='button-right arrow'>🠆</button>
+    <button id="carousel-button-right" onclick="this.disabled=true;" class='button-right arrow'><span class="arrow-container">&#10140;</span></button>
   </div>
 </section>
 <style lang='scss'>
@@ -66,7 +66,6 @@ const { images, header } = Astro.props;
     justify-content: center;
     width: 100%;
   }
-
 
   .carousel-image {
    
@@ -130,6 +129,11 @@ const { images, header } = Astro.props;
   .sliding-transition {
     transition: all 0.5s ease-in-out;
   }
+
+  .arrow-reverse {
+    transform: rotate(180deg)
+  }
+
   .center-image img {
     transition: all 0.5s ease-in-out;
     &:hover {
